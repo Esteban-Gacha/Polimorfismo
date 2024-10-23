@@ -5,17 +5,17 @@ import java.time.LocalTime;
 
 public class Reserva {
     private double costoTotal;
-    private LocalDate fechaDeReserva;
-    private LocalTime hora;
+    private LocalDate fechaDeReserva = LocalDate.now();
+    private LocalTime hora = LocalTime.now();
     private int dias;
+    private Vehiculo vehiculo;
     private Cliente cliente;
 
-    public Reserva(double costoTotal, LocalDate fechaDeReserva, LocalTime hora, int dias, Cliente cliente){
-        this.costoTotal=costoTotal;
-        this.fechaDeReserva=fechaDeReserva;
-        this.hora=hora;
-        this.dias=dias;
-        this.cliente=cliente;
+    public Reserva(double costoTotal, int dias, Cliente cliente,Vehiculo vehiculo) {
+        this.costoTotal = costoTotal;
+        this.dias = dias;
+        this.cliente = cliente;
+        this.vehiculo=vehiculo;
     }
 
     public double getCostoTotal() {
@@ -58,12 +58,18 @@ public class Reserva {
         this.cliente = cliente;
     }
 
+    public Vehiculo getVehiculo() {
+        return vehiculo;
+    }
+
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
     @Override
     public String toString() {
         return "Reserva [costoTotal=" + costoTotal + ", fechaDeReserva=" + fechaDeReserva + ", hora=" + hora + ", dias="
                 + dias + ", cliente=" + cliente + "]";
     }
-    
-    
-    
+
 }

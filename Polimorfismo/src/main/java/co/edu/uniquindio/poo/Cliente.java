@@ -5,19 +5,18 @@ import java.util.LinkedList;
 
 public class Cliente extends Persona {
 
-    
-    private Collection <Reserva> reservas;
+    private Collection<Reserva> reservas;
 
-    public Cliente(String nombre, String apellido, String cedula, int edad){
+    public Cliente(String nombre, String apellido, String cedula, int edad) {
         super(nombre, apellido, cedula, edad);
-        reservas= new LinkedList<>();
+        reservas = new LinkedList<>();
     }
 
-    public Collection <Reserva> getReservas() {
+    public Collection<Reserva> getReservas() {
         return reservas;
     }
 
-    public void setReservas(Collection <Reserva> reservas) {
+    public void setReservas(Collection<Reserva> reservas) {
         this.reservas = reservas;
     }
 
@@ -25,6 +24,5 @@ public class Cliente extends Persona {
     public String toString() {
         return "Cliente [reservas=" + reservas + "]";
     }
-    
-    
+
 }
