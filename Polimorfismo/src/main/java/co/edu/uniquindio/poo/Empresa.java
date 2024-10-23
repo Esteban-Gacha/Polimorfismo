@@ -92,7 +92,8 @@ public class Empresa {
         double costo=0;
         Vehiculo vehiculo=reserva.getVehiculo();
         if(vehiculo instanceof Auto){
-            int dias=((Auto)vehiculo).getDiasReserva();
+            Auto auto=((Auto)vehiculo);
+            int dias=reserva.getDias();
             costo=vehiculo.getTarifaBase()*dias;
             reserva.setCostoTotal(costo);
         }else if(vehiculo instanceof Moto){
